@@ -5,7 +5,10 @@ while True:
 		print(eval(IP))
 	except SyntaxError:
 		try:
-			exec(IP)
+			if IP.endswith(':') and not IP.endswith('\n'):
+				IP += input('... ')
+			else:
+				exec(IP)
 		except:
 			print(traceback.format_exc())
 	except:
