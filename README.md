@@ -3,3 +3,4 @@ This is a package for debugging and further coding. It brings you back to the in
 ```python
 import terminator
 ```
+After importing, you can interact with your scripts as if you have run them in your shells.
