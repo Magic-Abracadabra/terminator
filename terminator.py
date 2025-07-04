@@ -1,14 +1,17 @@
 import traceback
 while True:
 	try:
-		IP = input('>>> ')
+		IP = input('')
+		block = IP
 		print(eval(IP))
 	except SyntaxError:
 		try:
-			if IP.endswith(':') and not IP.endswith('\n'):
-				IP += input('... ')
-			else:
-				exec(IP)
+			if IP.endswith(':'):
+				block += '\n'
+				while IP != '\n':
+					IP = input('')+'\n'
+					block += IP
+			exec(block)
 		except:
 			print(traceback.format_exc())
 	except:
